@@ -12,13 +12,16 @@
                     <a class="nav-link" href="#"><i class="bi bi-house"></i> Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="bi bi-cart-check"></i> Cart (0)</a>
+                    <a class="nav-link" href="#"><i class="bi bi-cart-check"></i> Cart ({{ data.countCartItems }})</a>
                 </li>
             </ul>
         </div>
     </nav>
 </template>
 
-<script setup></script>
+<script setup>
+import { useCartStore } from '../stores/useCartStore'
+const data = useCartStore();
+</script>
 
 <style scoped></style>
